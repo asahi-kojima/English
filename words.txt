@@ -1,9 +1,9 @@
 brolly 傘
-telescopic umbrella 折りたたみ傘
+"telescopic umbrella" 折りたたみ傘
 nippy 厳しい寒さ
 chilly うすら寒い
 "bright and early" 朝早く
 "fancy + ...ing" 好む
 dash 急ぐ
 rush 急ぐ
-Fortunately/Luckily/Thankfully
+"Fortunately/Luckily/Thankfully" 幸運なことに
