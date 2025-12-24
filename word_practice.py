@@ -1,4 +1,5 @@
 import sys
+import random
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
@@ -27,14 +28,32 @@ if __name__ == "__main__":
             if len(parts) == 2:
                 sentence = parts[0][1:]  # Remove leading "
                 meaning = parts[1]
-                words.append({'word': sentence, 'meaning': meaning})
+                words.append([sentence,meaning])
         else:
             # Type (1): 英単語 日本語
             parts = line.split(' ', 1)
             if len(parts) == 2:
                 word = parts[0]
                 meaning = parts[1]
-                words.append({'word': word, 'meaning': meaning})
+                words.append([word,meaning])
 
-    for word_entry in words:
-        print(f"Word: {word_entry['word']}, Meaning: {word_entry['meaning']}")
+    if len(words) == 0:
+        print("no entries available")
+        exit()
+
+    print(f"loaded {len(words)} words. Press Enter to reveal Japanese, Q to quit.")
+    idx = random.randrange(len(words))
+    current_eng, current_jp = words[idx]
+    print(f"\n{current_eng}",end="")
+
+    while True:
+        user_input = input("").strip()
+        if user_input.lower() == "q":
+            print("bye")
+            break
+
+        print(f"{current_jp}")
+        user_input = input("").strip()
+        idx = random.randrange(len(words))
+        current_eng, current_jp = words[idx]
+        print(f"\n\n\n\n{current_eng}",end="")
